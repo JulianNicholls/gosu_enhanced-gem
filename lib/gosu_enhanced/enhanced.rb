@@ -20,12 +20,15 @@ module Gosu
   # to centre a text in a rectangle
   
   class Font
+    include GosuEnhanced
+
     def measure( text )
       Size.new( text_width( text, 1 ), height )
     end
     
     def centred_in( text, rect )
       size = measure( text )
+      
       Point.new( 
         (rect.width - size.width) / 2, 
         (rect.height - size.height) / 2 

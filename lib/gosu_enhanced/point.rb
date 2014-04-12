@@ -9,6 +9,8 @@ module GosuEnhanced
       end
     end
 
+    # Negative co-ordinates are allowed.
+    
     def move_by!( by_x, by_y = nil )
       if by_x.respond_to? :x
         self.x += by_x.x

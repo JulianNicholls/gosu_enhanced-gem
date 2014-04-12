@@ -91,4 +91,22 @@ describe GosuEnhanced::Point do
       expect( point.y ).to eq -50
     end
   end
+  
+  # This might seem laboured, but I have run foul of dup before
+  
+  describe '#dup' do
+    it 'should make a copy of the Point' do
+      point  = GosuEnhanced::Point.new( 10, 20 )
+      npoint = point.dup
+      expect( point.x ).to eq 10
+      expect( point.y ).to eq 20
+      expect( npoint.x ).to eq 10
+      expect( npoint.y ).to eq 20
+      point.move_to!( 40, 50 )
+      expect( point.x ).to eq 40
+      expect( point.y ).to eq 50
+      expect( npoint.x ).to eq 10
+      expect( npoint.y ).to eq 20
+    end
+  end
 end

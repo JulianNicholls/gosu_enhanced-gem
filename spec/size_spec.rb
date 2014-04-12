@@ -114,4 +114,20 @@ describe GosuEnhanced::Size do
       expect { size.deflate!( 80, 70 ) }.to raise_error Exception
     end
   end
+  
+  describe '#dup' do
+    it 'should make a copy of the Size' do
+      size  = GosuEnhanced::Size.new( 10, 20 )
+      nsize = size.dup
+      expect( size.width ).to eq 10
+      expect( size.height ).to eq 20
+      expect( nsize.width ).to eq 10
+      expect( nsize.height ).to eq 20
+      size.inflate!( 40, 50 )
+      expect( size.width ).to eq 50
+      expect( size.height ).to eq 70
+      expect( nsize.width ).to eq 10
+      expect( nsize.height ).to eq 20
+    end
+  end
 end

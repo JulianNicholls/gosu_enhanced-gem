@@ -4,23 +4,28 @@ Some added classes for using Gosu.
 
 ## Point
 
-Holds a set of (x, y) co-ordinates. Allows for offsetting and moving by another Point
-or a pair of co-ordinates.
+Holds a set of (x, y) co-ordinates. Allows for offsetting and moving by another 
+Point or a pair of co-ordinates.
 
 ## Size
 
-Holds a (width, height) size. Allows for inflation / deflation with another size or
-a pair of sizes.
+Holds a (width, height) size. Allows for inflation / deflation with another
+size or a pair of sizes.
+
+## Region
+
+Holds a position and size. Delegates movement and size change to its 
+constituents.
 
 ## Gosu::Window
 
-Added #draw_rectangle which draws a simple rectangle specified with a Point and Size
-in one colour.
+Added #draw_rectangle which draws a simple rectangle specified with a Point 
+and Size in one colour.
 
 ## Gosu::Font
 
-Added #measure and #centred_in which measure a piece of text and centre it in a
-given Size.
+Added #measure and #centred_in which measure a piece of text and centre it in
+a given Size.
 
 ## Installation
 

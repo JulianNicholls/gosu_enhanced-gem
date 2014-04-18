@@ -38,6 +38,9 @@ describe GosuEnhanced::Region do
       reg.move_by!( GosuEnhanced::Point.new( 30, 40 ) )
       expect( reg.left ).to eq 40
       expect( reg.top ).to  eq 60
+      
+      expect( point.x ).to eq 10
+      expect( point.y ).to eq 20
     end
     
     it 'should work with two positive values' do
@@ -68,6 +71,9 @@ describe GosuEnhanced::Region do
       reg.move_to!( GosuEnhanced::Point.new( 30, 40 ) )
       expect( reg.left ).to eq 30
       expect( reg.top ).to  eq 40
+      
+      expect( point.x ).to eq 10
+      expect( point.y ).to eq 20
     end
     
     it 'should work with two positive values' do
@@ -90,6 +96,9 @@ describe GosuEnhanced::Region do
         reg.inflate!( GosuEnhanced::Size.new( 30, 40 ) )
         expect( reg.width ).to eq 60
         expect( reg.height ).to eq 80
+      
+        expect( size.width ).to eq 30
+        expect( size.height ).to eq 40
       end
 
       it 'should work with two values' do
@@ -108,9 +117,9 @@ describe GosuEnhanced::Region do
 
       it 'should raise an error with out-of-range values' do
         reg = GosuEnhanced::Region.new( point, size )
-        expect { size.inflate!( -50, -20 ) }.to raise_error Exception
-        expect { size.inflate!( -25, -60 ) }.to raise_error Exception
-        expect { size.inflate!( -50, -70 ) }.to raise_error Exception
+        expect { reg.inflate!( -50, -20 ) }.to raise_error Exception
+        expect { reg.inflate!( -25, -60 ) }.to raise_error Exception
+        expect { reg.inflate!( -50, -70 ) }.to raise_error Exception
       end
     end
 
@@ -118,22 +127,25 @@ describe GosuEnhanced::Region do
       it 'should work with a Size' do
         reg = GosuEnhanced::Region.new( point, size )
         reg.deflate!( GosuEnhanced::Size.new( 20, 35 ) )
-        expect( size.width ).to eq 10
-        expect( size.height ).to eq 5
+        expect( reg.width ).to eq 10
+        expect( reg.height ).to eq 5
+    
+        expect( size.width ).to eq 30
+        expect( size.height ).to eq 40
       end
 
       it 'should work with two values' do
         reg = GosuEnhanced::Region.new( point, size )
         reg.deflate!( 10, 25 )
-        expect( size.width ).to eq 20
-        expect( size.height ).to eq 15
+        expect( reg.width ).to eq 20
+        expect( reg.height ).to eq 15
       end
 
       it 'should raise an error for out-of-range values' do
         reg = GosuEnhanced::Region.new( point, size )
-        expect { size.deflate!( 25, 50 ) }.to raise_error Exception
-        expect { size.deflate!( 60, 35 ) }.to raise_error Exception
-        expect { size.deflate!( 80, 70 ) }.to raise_error Exception
+        expect { reg.deflate!( 25, 50 ) }.to raise_error Exception
+        expect { reg.deflate!( 60, 35 ) }.to raise_error Exception
+        expect { reg.deflate!( 80, 70 ) }.to raise_error Exception
       end
     end
   end

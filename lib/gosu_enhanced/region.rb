@@ -1,7 +1,7 @@
 require 'forwardable'
 
 module GosuEnhanced
-  # Hold a rectangular region specified by a Point position, and a Size
+  # Hold a rectangular region specified by a Point and a Size
   # Most functions are delegated to the constituent Point and Size
   class Region
     extend Forwardable
@@ -12,7 +12,7 @@ module GosuEnhanced
     attr_reader :position, :size
     
     def initialize( pos, size )
-      @position, @size = pos, size
+      @position, @size = pos.dup, size.dup
     end
     
     def contains?( col, row = nil )
@@ -26,15 +26,19 @@ module GosuEnhanced
     end
     
     def top
-      @position.y
+      position.y
     end
     
     def left
-      @position.x
+      position.x
     end
   
     def dup
-      Region.new( @position.dup, @size.dup )
+      Region.new( position.dup, size.dup )
+    end
+    
+    def draw( surface, z, colour )
+      surface.draw_rectangle( position, size, z, colour )
     end
   end
 end

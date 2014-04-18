@@ -9,11 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Julian Nicholls"]
   spec.email         = ["juliannicholls29@gmail.com"]
   spec.summary       = %q{Enhanced versions of some Gosu classes.}
-  spec.description   = %q{Point and Size classes to hold pixel addresses and 
+  spec.description   = %q{Point, Size, and Region classes to hold pixel addresses and 
 rectangle sizes respectively. Updated window class to draw rectangle in a single 
 colour more easily. Updated font class to measure text and return co-ordinates 
 to centre a piece of text in a rectangle size.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/JulianNicholls/gosu_enhanced-gem"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

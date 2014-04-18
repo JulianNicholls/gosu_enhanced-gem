@@ -2,10 +2,24 @@ require 'spec_helper'
 
 describe GosuEnhanced::Point do
   describe '#initialize' do
-    it 'should work with two values' do
+    it 'should work with two positive values' do
       point = GosuEnhanced::Point.new( 10, 20 )
       expect( point.x ).to eq 10
       expect( point.y ).to eq 20
+    end
+
+    it 'should work with negative values' do
+      point = GosuEnhanced::Point.new( -10, 20 )
+      expect( point.x ).to eq -10
+      expect( point.y ).to eq 20
+
+      point = GosuEnhanced::Point.new( 10, -20 )
+      expect( point.x ).to eq 10
+      expect( point.y ).to eq -20
+
+      point = GosuEnhanced::Point.new( -10, -20 )
+      expect( point.x ).to eq -10
+      expect( point.y ).to eq -20
     end
   end
   

@@ -7,6 +7,12 @@ describe GosuEnhanced::Size do
       expect( size.width ).to eq 10
       expect( size.height ).to eq 20
     end
+
+    it 'should reject negative values' do
+      expect { size = GosuEnhanced::Size.new( -10, 20 ) }.to raise_error  Exception
+      expect { size = GosuEnhanced::Size.new( 10, -20 ) }.to raise_error  Exception
+      expect { size = GosuEnhanced::Size.new( -10, -20 ) }.to raise_error Exception
+    end
   end
   
   describe '#inflate' do
@@ -24,7 +30,7 @@ describe GosuEnhanced::Size do
       expect( esize.height ).to eq 70
     end
     
-    it 'should work with two explicitly negative values' do
+    it 'should work with negative values' do
       size  = GosuEnhanced::Size.new( 40, 50 )
       esize = size.inflate( -30, -20 )
       expect( esize.width ).to eq 10
@@ -77,7 +83,7 @@ describe GosuEnhanced::Size do
       expect( size.height ).to eq 70
     end
     
-    it 'should work with two explicitly negative values' do
+    it 'should work with negative values' do
       size  = GosuEnhanced::Size.new( 40, 50 )
       size.inflate!( -30, -20 )
       expect( size.width ).to eq 10

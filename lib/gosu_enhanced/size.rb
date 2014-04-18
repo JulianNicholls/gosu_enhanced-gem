@@ -1,9 +1,16 @@
 module GosuEnhanced
   # Hold a 2-dimensional size and allow for inflation / deflation
-  class Size < Struct.new( :width, :height )
-    # Inflation with a negative value or deflation is not allowed to make a 
-    # dimension negative.
-  
+  class Size
+    attr_reader :width, :height
+    
+    # Neither dimension can be negative, since that doesn't make sense.
+    # The values are checked on inflation / deflation.
+    
+    def initialize( w, h )
+      @width, @height = w, h
+      validate( 0, 0 )
+    end
+    
     def inflate( by_w, by_h = nil )
       if by_w.respond_to? :width
         validate( by_w.width, by_w.height )
@@ -28,13 +35,13 @@ module GosuEnhanced
       if by_w.respond_to? :width
         validate( by_w.width, by_w.height )
         
-        self.width  += by_w.width
-        self.height += by_w.height
+        @width  += by_w.width
+        @height += by_w.height
       else
         validate( by_w, by_h )
         
-        self.width  += by_w
-        self.height += by_h
+        @width  += by_w
+        @height += by_h
       end
     end
 
@@ -46,6 +53,9 @@ module GosuEnhanced
       end
     end
     
+    def ==( other )
+      width == other.width && height == other.height
+    end
     private
     
     def validate( by_w, by_h )

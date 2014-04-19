@@ -18,23 +18,22 @@ module Gosu
 
   # Add a measure to return both width and height for a text and a way
   # to centre a text in a rectangle
-  
   class Font
     include GosuEnhanced
 
     def measure( text )
       Size.new( text_width( text, 1 ), height )
     end
-    
+
     def centred_in( text, rect )
       size = measure( text )
-      
-      Point.new( 
-        (rect.width - size.width) / 2, 
-        (rect.height - size.height) / 2 
+
+      Point.new(
+        (rect.width - size.width) / 2,
+        (rect.height - size.height) / 2
       )
     end
 
     alias_method :centered_in, :centred_in
-  end  
+  end
 end

@@ -3,29 +3,29 @@ require 'spec_helper'
 describe GosuEnhanced::Region do
   let( :point ) { GosuEnhanced::Point.new( 10, 20 ) }
   let( :size )  { GosuEnhanced::Size.new( 30, 40 ) }
-  
+
   describe '#initialize' do
     it 'should work with a Point and a Size' do
       reg = GosuEnhanced::Region.new( point, size )
     end
   end
-  
+
   describe '#position' do
     it 'should return the position as a Point' do
       reg = GosuEnhanced::Region.new( point, size )
       expect( reg.position ).to eq GosuEnhanced::Point.new( 10, 20 )
     end
   end
-  
+
   describe '#top' do
-    it 'should return the top co-ordinate' do |variable|
+    it 'should return the top co-ordinate' do
       reg = GosuEnhanced::Region.new( point, size )
       expect( reg.top ).to eq 20
     end
   end
 
   describe '#left' do
-    it 'should return the left co-ordinate' do |variable|
+    it 'should return the left co-ordinate' do
       reg = GosuEnhanced::Region.new( point, size )
       expect( reg.left ).to eq 10
     end
@@ -37,7 +37,7 @@ describe GosuEnhanced::Region do
       expect( reg.size ).to eq GosuEnhanced::Size.new( 30, 40 )
     end
   end
-  
+
   describe '#contains?' do
     it 'should work with two co-ordinates' do
       reg = GosuEnhanced::Region.new( point, size )
@@ -55,10 +55,10 @@ describe GosuEnhanced::Region do
       expect( reg.contains?( GosuEnhanced::Point.new( 30, 60 ) ) ).to be false
     end
   end
-  
+
   # Unlike the Point and Size, a Region needs a dup override to actually return
   # a duplicate correctly.
-  
+
   describe '#dup' do
     it 'should duplicate a region' do
       reg     = GosuEnhanced::Region.new( point, size )
@@ -76,7 +76,7 @@ describe GosuEnhanced::Region do
       expect( new_reg.size ).to eq GosuEnhanced::Size.new( 40, 50 )
 
       expect( reg.position ).to eq GosuEnhanced::Point.new( 10, 20 )
-      expect( reg.size ).to eq GosuEnhanced::Size.new( 30, 40 )      
+      expect( reg.size ).to eq GosuEnhanced::Size.new( 30, 40 )
     end
   end
 end

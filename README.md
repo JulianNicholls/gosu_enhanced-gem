@@ -1,31 +1,31 @@
-# GosuEnhanced
+# gosu_enhanced V0.4.0
 
 Some added classes for using Gosu.
 
 ## Point
 
-Holds a set of (x, y) co-ordinates. Allows for offsetting and moving by another 
-Point or a pair of co-ordinates.
+Holds a set of (x, y) co-ordinates. Allows for offsetting and moving by another
+Point, a Size, or a pair of co-ordinates.
 
 ## Size
 
 Holds a (width, height) size. Allows for inflation / deflation with another
-size or a pair of sizes.
+Size or a pair of dimensions.
 
 ## Region
 
-Holds a position and size. Delegates movement and size change to its 
+Holds a position and size. Delegates movement and size change to its
 constituents.
 
 ## Gosu::Window
 
-Added #draw_rectangle which draws a simple rectangle specified with a Point 
+Added #draw_rectangle which draws a simple rectangle specified with a Point
 and Size in one colour.
 
 ## Gosu::Font
 
 Added #measure and #centred_in which measure a piece of text and centre it in
-a given Size.
+a given Size respectively.
 
 ## Installation
 
@@ -52,3 +52,11 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## DISCLAIMER
+
+I am not affiliated in any way to the authors of the Gosu Gem or
+[libgosu](libgosu.org).
+
+Gosu and all documentation © 2001-2014 Julian Raschke, Jan Lücker, and
+other contributors. Gosu is released under the MIT license.

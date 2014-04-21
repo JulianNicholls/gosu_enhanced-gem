@@ -37,7 +37,7 @@ describe GosuEnhanced::Region do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_by!( GosuEnhanced::Point.new( 30, 40 ) )
       expect( reg.left ).to eq 40
-      expect( reg.top ).to  eq 60
+      expect( reg.top ).to eq 60
 
       # The original point should not have been changed by the move_by!
       expect( point.x ).to eq 10
@@ -48,28 +48,28 @@ describe GosuEnhanced::Region do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_by!( GosuEnhanced::Size.new( 40, 50 ) )
       expect( reg.left ).to eq 50
-      expect( reg.top ).to  eq 70
+      expect( reg.top ).to eq 70
     end
 
     it 'should work with two positive values' do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_by!( 40, 50 )
       expect( reg.left ).to eq 50
-      expect( reg.top ).to  eq 70
+      expect( reg.top ).to eq 70
     end
 
     it 'should work with two negative values' do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_by!( -5, -10 )
       expect( reg.left ).to eq 5
-      expect( reg.top ).to  eq 10
+      expect( reg.top ).to eq 10
     end
 
     it 'should work with values that result in negative co-ordinates' do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_by!( -80, -150 )
       expect( reg.left ).to eq( -70 )
-      expect( reg.top ).to  eq( -130 )
+      expect( reg.top ).to eq( -130 )
     end
   end
 
@@ -78,7 +78,7 @@ describe GosuEnhanced::Region do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_to!( GosuEnhanced::Point.new( 30, 40 ) )
       expect( reg.left ).to eq 30
-      expect( reg.top ).to  eq 40
+      expect( reg.top ).to eq 40
 
       expect( point.x ).to eq 10
       expect( point.y ).to eq 20
@@ -88,14 +88,14 @@ describe GosuEnhanced::Region do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_to!( 40, 50 )
       expect( reg.left ).to eq 40
-      expect( reg.top ).to  eq 50
+      expect( reg.top ).to eq 50
     end
 
     it 'should work with two negative values' do
       reg = GosuEnhanced::Region.new( point, size )
       reg.move_to!( -5, -10 )
       expect( reg.left ).to eq( -5 )
-      expect( reg.top ).to  eq( -10 )
+      expect( reg.top ).to eq( -10 )
     end
   end
 

@@ -9,8 +9,8 @@ describe GosuEnhanced::Size do
     end
 
     it 'should reject negative values' do
-      expect { GosuEnhanced::Size.new( -10, 20 ) }.to raise_error  Exception
-      expect { GosuEnhanced::Size.new( 10, -20 ) }.to raise_error  Exception
+      expect { GosuEnhanced::Size.new( -10, 20 ) }.to raise_error Exception
+      expect { GosuEnhanced::Size.new( 10, -20 ) }.to raise_error Exception
       expect { GosuEnhanced::Size.new( -10, -20 ) }.to raise_error Exception
     end
   end

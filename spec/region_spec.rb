@@ -6,7 +6,7 @@ describe GosuEnhanced::Region do
 
   describe '#initialize' do
     it 'should work with a Point and a Size' do
-      reg = GosuEnhanced::Region.new( point, size )
+      GosuEnhanced::Region.new( point, size )
     end
   end
 

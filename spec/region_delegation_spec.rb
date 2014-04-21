@@ -39,6 +39,7 @@ describe GosuEnhanced::Region do
       expect( reg.left ).to eq 40
       expect( reg.top ).to  eq 60
 
+      # The original point should not have been changed by the move_by!
       expect( point.x ).to eq 10
       expect( point.y ).to eq 20
     end
@@ -105,6 +106,7 @@ describe GosuEnhanced::Region do
       expect( reg.width ).to eq 60
       expect( reg.height ).to eq 80
 
+      # The original size should not have been changed by the inflate!
       expect( size.width ).to eq 30
       expect( size.height ).to eq 40
     end

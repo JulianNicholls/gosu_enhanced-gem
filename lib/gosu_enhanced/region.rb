@@ -35,7 +35,7 @@ module GosuEnhanced
 
     # It is necessary to override dup to produce an actual duplicate.
     def dup
-      Region.new( position.dup, size.dup )
+      Region.new( position, size )
     end
 
     def draw( surface, z_order, colour )

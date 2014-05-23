@@ -1,4 +1,4 @@
-# gosu_enhanced V0.4.0
+# gosu_enhanced V0.3.2
 
 Some added classes for using Gosu.
 
@@ -43,7 +43,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Contributing
 

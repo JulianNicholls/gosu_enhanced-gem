@@ -56,7 +56,11 @@ module GosuEnhanced
     def ==( other )
       width == other.width && height == other.height
     end
-
+    
+    def to_s
+      "<GosuEnhanced::Size #{width}x#{height}>"
+    end
+    
     private
 
     def validate( by_w, by_h )

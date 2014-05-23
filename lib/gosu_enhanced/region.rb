@@ -41,5 +41,9 @@ module GosuEnhanced
     def draw( surface, z_order, colour )
       surface.draw_rectangle( position, size, z_order, colour )
     end
+
+    def to_s
+      "<GosuEnhanced::Region: #{position}, #{size}>"
+    end
   end
 end

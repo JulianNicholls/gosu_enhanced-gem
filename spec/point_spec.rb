@@ -141,4 +141,11 @@ describe GosuEnhanced::Point do
       expect( point.y ).to eq 20
     end
   end
+  
+  describe '#to_s' do
+    it 'should render usefully.' do
+      point  = GosuEnhanced::Point.new( 10, 20 )
+      expect( point.to_s ).to eq '#<struct GosuEnhanced::Point x=10, y=20>'
+    end
+  end
 end

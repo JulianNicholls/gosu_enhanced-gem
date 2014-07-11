@@ -12,23 +12,11 @@ module GosuEnhanced
     end
 
     def inflate( by_w, by_h = nil )
-      if by_w.respond_to? :width
-        validate( by_w.width, by_w.height )
-
-        Size.new( width + by_w.width, height + by_w.height )
-      else
-        validate( by_w, by_h )
-
-        Size.new( width + by_w, height + by_h )
-      end
+      self.dup.inflate!( by_w, by_h )
     end
 
     def deflate( by_w, by_h = nil )
-      if by_w.respond_to? :width
-        inflate( -by_w.width, -by_w.height )
-      else
-        inflate( -by_w, -by_h )
-      end
+      self.dup.deflate!( by_w, by_h )
     end
 
     def inflate!( by_w, by_h = nil )
@@ -43,6 +31,8 @@ module GosuEnhanced
         @width  += by_w
         @height += by_h
       end
+
+      self
     end
 
     def deflate!( by_w, by_h = nil )
@@ -56,11 +46,11 @@ module GosuEnhanced
     def ==( other )
       width == other.width && height == other.height
     end
-    
+
     def to_s
       "<GosuEnhanced::Size #{width}x#{height}>"
     end
-    
+
     private
 
     def validate( by_w, by_h )

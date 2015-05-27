@@ -1,6 +1,6 @@
-# gosu_enhanced V0.3.2
+# gosu_enhanced V0.3.4
 
-Some added classes for using Gosu.
+Some added classes for using Gosu. Updated to use Gosu 0.9.x.
 
 ## Point
 
@@ -35,7 +35,7 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -58,5 +58,5 @@ Or install it yourself as:
 I am not affiliated in any way to the authors of the Gosu Gem or
 [libgosu](libgosu.org).
 
-Gosu and all documentation © 2001-2014 Julian Raschke, Jan Lücker, and
+Gosu and all documentation © 2001-2015 Julian Raschke, Jan Lücker, and
 other contributors. Gosu is released under the MIT license.

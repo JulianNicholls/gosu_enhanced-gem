@@ -12,16 +12,17 @@ module Gosu
     # @param colour [Gosu::Color] Colour of rectangle
 
     def draw_rectangle( point, size, z_index, colour )
-      left, top     = point.x, point.y
-      width, height = size.width, size.height
+      left = point.x
+      top = point.y
+      width = size.width
+      height = size.height
 
       draw_quad(
         left, top, colour,
         left + width, top, colour,
         left + width, top + height, colour,
         left, top + height, colour,
-        z_index
-      )
+        z_index )
     end
   end
 
@@ -46,7 +47,8 @@ module Gosu
     # @param text [String] String to centre
     # @param rect [Size] Rectangular area size
     #
-    # @return [Point] The point to write the string, expressed as an offset from the top-left corner of the rectangle.
+    # @return [Point] The point to write the string, expressed as an offset
+    #   from the top-left corner of the rectangle.
 
     def centred_in( text, rect )
       size = measure( text )

@@ -12,17 +12,15 @@ module GosuEnhanced
     attr_reader :position, :size
 
     def initialize( pos, size )
-      @position, @size = pos.dup, size.dup
+      @position = pos.dup
+      @size = size.dup
     end
 
     def contains?( col, row = nil )
-      if col.respond_to? :x
-        col.x.between?( left, left + width - 1 ) &&
-        col.y.between?( top, top + height - 1 )
-      else
-        col.between?( left, left + width - 1 ) &&
+      return contains_point?( col ) if col.respond_to? :x
+
+      col.between?( left, left + width - 1 ) &&
         row.between?( top, top + height - 1 )
-      end
     end
 
     def top
@@ -44,6 +42,13 @@ module GosuEnhanced
 
     def to_s
       "<GosuEnhanced::Region: #{position}, #{size}>"
+    end
+
+    private
+
+    def contains_point?( pt )
+      pt.x.between?( left, left + width - 1 ) &&
+        pt.y.between?( top, top + height - 1 )
     end
   end
 end

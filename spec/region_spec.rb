@@ -79,14 +79,16 @@ describe GosuEnhanced::Region do
       expect( reg.size ).to eq GosuEnhanced::Size.new( 30, 40 )
     end
   end
-  
+
   describe '#to_s' do
     it 'should render usefully' do
       point   = GosuEnhanced::Point.new( 10, 20 )
       size    = GosuEnhanced::Size.new( 30, 40 )
       region  = GosuEnhanced::Region.new( point, size )
-      
-      expect( region.to_s ).to eq '<GosuEnhanced::Region: #<struct GosuEnhanced::Point x=10, y=20>, <GosuEnhanced::Size 30x40>>'
+
+      expect( region.to_s ).to eq '<GosuEnhanced::Region: ' \
+      '#<struct GosuEnhanced::Point x=10, y=20>' \
+      ', <GosuEnhanced::Size 30x40>>'
     end
   end
 end

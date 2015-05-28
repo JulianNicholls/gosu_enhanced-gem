@@ -7,28 +7,29 @@ module GosuEnhanced
     # The values are checked on inflation / deflation.
 
     def initialize( w, h )
-      @width, @height = w, h
+      @width = w
+      @height = h
       validate( 0, 0 )
     end
 
     def inflate( by_w, by_h = nil )
-      self.dup.inflate!( by_w, by_h )
+      dup.inflate!( by_w, by_h )
     end
 
     def deflate( by_w, by_h = nil )
-      self.dup.deflate!( by_w, by_h )
+      dup.deflate!( by_w, by_h )
     end
 
     def inflate!( by_w, by_h = nil )
       if by_w.respond_to? :width
         validate( by_w.width, by_w.height )
 
-        @width  += by_w.width
+        @width += by_w.width
         @height += by_w.height
       else
         validate( by_w, by_h )
 
-        @width  += by_w
+        @width += by_w
         @height += by_h
       end
 

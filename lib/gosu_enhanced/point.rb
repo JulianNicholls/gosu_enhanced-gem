@@ -1,33 +1,47 @@
+# Module for gosu_enhanced gem.
 module GosuEnhanced
   # Hold a (x, y) pixel position, and allow for offsetting and movement
   Point = Struct.new( :x, :y ) do
     def offset( by_x, by_y = nil )
-      self.dup.move_by!( by_x, by_y )
+      dup.move_by!( by_x, by_y )
     end
 
     # Negative co-ordinates are allowed.
 
     def move_by!( by_x, by_y = nil )
-      if by_x.respond_to? :x
-        self.x += by_x.x
-        self.y += by_x.y
-      elsif by_x.respond_to? :width
-        self.x += by_x.width
-        self.y += by_x.height
-      else
-        self.x += by_x
-        self.y += by_y
-      end
+      return move_by_point( by_x ) if by_x.respond_to? :x
+      return move_by_size( by_x )  if by_x.respond_to? :width
+
+      self.x += by_x
+      self.y += by_y
 
       self
     end
 
     def move_to!( new_x, new_y = nil )
       if new_x.respond_to? :x
-        self.x, self.y = new_x.x, new_x.y
+        self.x = new_x.x
+        self.y = new_x.y
       else
-        self.x, self.y = new_x, new_y
+        self.x = new_x
+        self.y = new_y
       end
+
+      self
+    end
+
+    private
+
+    def move_by_point( pt )
+      self.x += pt.x
+      self.y += pt.y
+
+      self
+    end
+
+    def move_by_size( sz )
+      self.x += sz.width
+      self.y += sz.height
 
       self
     end

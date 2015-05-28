@@ -140,7 +140,7 @@ describe GosuEnhanced::Size do
       expect( size.height ).to eq 20
     end
   end
-  
+
   describe '#to_s' do
     it 'should render usefully' do
       size  = GosuEnhanced::Size.new( 10, 20 )

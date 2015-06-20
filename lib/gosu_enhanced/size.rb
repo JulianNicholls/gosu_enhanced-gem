@@ -6,45 +6,40 @@ module GosuEnhanced
     # Neither dimension can be negative, since that doesn't make sense.
     # The values are checked on inflation / deflation.
 
-    def initialize( w, h )
+    def initialize(w, h)
       @width = w
       @height = h
-      validate( 0, 0 )
+      validate(0, 0)
     end
 
-    def inflate( by_w, by_h = nil )
-      dup.inflate!( by_w, by_h )
+    def inflate(by_w, by_h = nil)
+      dup.inflate!(by_w, by_h)
     end
 
-    def deflate( by_w, by_h = nil )
-      dup.deflate!( by_w, by_h )
+    def deflate(by_w, by_h = nil)
+      dup.deflate!(by_w, by_h)
     end
 
-    def inflate!( by_w, by_h = nil )
-      if by_w.respond_to? :width
-        validate( by_w.width, by_w.height )
+    def inflate!(by_w, by_h = nil)
+      return inflate_by_size(by_w) if by_w.respond_to? :width
 
-        @width += by_w.width
-        @height += by_w.height
-      else
-        validate( by_w, by_h )
+      validate(by_w, by_h)
 
-        @width += by_w
-        @height += by_h
-      end
+      @width += by_w
+      @height += by_h
 
       self
     end
 
-    def deflate!( by_w, by_h = nil )
+    def deflate!(by_w, by_h = nil)
       if by_w.respond_to? :width
-        inflate!( -by_w.width, -by_w.height )
+        inflate!(-by_w.width, -by_w.height)
       else
-        inflate!( -by_w, -by_h )
+        inflate!(-by_w, -by_h)
       end
     end
 
-    def ==( other )
+    def ==(other)
       width == other.width && height == other.height
     end
 
@@ -54,8 +49,17 @@ module GosuEnhanced
 
     private
 
-    def validate( by_w, by_h )
+    def validate(by_w, by_h)
       fail 'Cannot make size negative' if width + by_w < 0 || height + by_h < 0
+    end
+
+    def inflate_by_size(sz)
+      validate(sz.width, sz.height)
+
+      @width  += sz.width
+      @height += sz.height
+
+      self
     end
   end
 end

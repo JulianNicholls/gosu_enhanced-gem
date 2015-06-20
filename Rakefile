@@ -3,7 +3,7 @@ require 'bundler/gem_tasks'
 
 # Default directory for tests is ./spec
 # Run with rake spec
-RSpec::Core::RakeTask.new( :spec ) do |task|
+RSpec::Core::RakeTask.new(:spec) do |task|
   task.rspec_opts = ['--color']
 end
 

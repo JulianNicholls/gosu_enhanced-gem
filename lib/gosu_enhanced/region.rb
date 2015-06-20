@@ -11,16 +11,16 @@ module GosuEnhanced
 
     attr_reader :position, :size
 
-    def initialize( pos, size )
+    def initialize(pos, size)
       @position = pos.dup
       @size = size.dup
     end
 
-    def contains?( col, row = nil )
-      return contains_point?( col ) if col.respond_to? :x
+    def contains?(col, row = nil)
+      return contains_point?(col) if col.respond_to? :x
 
-      col.between?( left, left + width - 1 ) &&
-        row.between?( top, top + height - 1 )
+      col.between?(left, left + width - 1) &&
+        row.between?(top, top + height - 1)
     end
 
     def top
@@ -33,11 +33,11 @@ module GosuEnhanced
 
     # It is necessary to override dup to produce an actual duplicate.
     def dup
-      Region.new( position, size )
+      Region.new(position, size)
     end
 
-    def draw( surface, z_order, colour )
-      surface.draw_rectangle( position, size, z_order, colour )
+    def draw(surface, z_order, colour)
+      surface.draw_rectangle(position, size, z_order, colour)
     end
 
     def to_s
@@ -46,9 +46,9 @@ module GosuEnhanced
 
     private
 
-    def contains_point?( pt )
-      pt.x.between?( left, left + width - 1 ) &&
-        pt.y.between?( top, top + height - 1 )
+    def contains_point?(pt)
+      pt.x.between?(left, left + width - 1) &&
+        pt.y.between?(top, top + height - 1)
     end
   end
 end

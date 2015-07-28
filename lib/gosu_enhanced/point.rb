@@ -44,10 +44,10 @@ module GosuEnhanced
     end
 
     def move_to_point(pt)
-        self.x = pt.x
-        self.y = pt.y
+      self.x = pt.x
+      self.y = pt.y
 
-        self
+      self
     end
   end
 end

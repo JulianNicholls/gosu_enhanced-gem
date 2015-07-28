@@ -6,9 +6,9 @@ module GosuEnhanced
     # Neither dimension can be negative, since that doesn't make sense.
     # The values are checked on inflation / deflation.
 
-    def initialize(w, h)
-      @width = w
-      @height = h
+    def initialize(wid, ht)
+      @width = wid
+      @height = ht
       validate(0, 0)
     end
 
@@ -54,10 +54,12 @@ module GosuEnhanced
     end
 
     def inflate_by_size(sz)
-      validate(sz.width, sz.height)
+      width  = sz.width
+      height = sz.height
+      validate(width, height)
 
-      @width  += sz.width
-      @height += sz.height
+      @width  += width
+      @height += height
 
       self
     end

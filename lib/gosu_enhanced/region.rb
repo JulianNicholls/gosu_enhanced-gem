@@ -34,7 +34,7 @@ module GosuEnhanced
       position.y
     end
 
-    # Return the leftmost co-oridinate
+    # Return the leftmost co-ordinate
     def left
       position.x
     end

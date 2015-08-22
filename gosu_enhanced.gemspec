@@ -22,11 +22,11 @@ of text in a rectangle size.)
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'gosu', '~> 0.9'
+  spec.add_runtime_dependency 'gosu', '~> 0.10'
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rspec-nc'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rspec-nc', '~> 0.2'
+  spec.add_development_dependency 'pry', '~> 0.10'
 end

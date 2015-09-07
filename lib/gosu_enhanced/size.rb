@@ -10,8 +10,8 @@ module GosuEnhanced
     # The values are checked on inflation / deflation.
 
     # Initialise a size
-    # +wid+   Width
-    # +ht+    Height
+    # * +wid+   Width
+    # * +ht+    Height
 
     def initialize(wid, ht)
       @width = wid
@@ -99,5 +99,14 @@ module GosuEnhanced
 
       self
     end
+  end
+
+  # Utility function to construct a size
+  #
+  # * +x+   Width
+  # * +y+   Height
+
+  def Size(x, y)
+    Size.new(x, y)
   end
 end

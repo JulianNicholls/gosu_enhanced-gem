@@ -50,4 +50,14 @@ module GosuEnhanced
       self
     end
   end
+
+  # Utility function to construct a Point
+  #
+  # * +x+   x co-ordinate
+  # * +y+   y co-ordinate
+
+  def Point(x, y)
+    Point.new(x, y)
+  end
 end
+

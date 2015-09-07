@@ -1,6 +1,6 @@
-# gosu_enhanced V0.3.4
+# gosu_enhanced V0.4.0
 
-Some added classes for using Gosu. Updated to use Gosu 0.9.x.
+Some added classes for using Gosu. Updated to use Gosu 0.10.x.
 
 ## Point
 
@@ -20,12 +20,15 @@ constituents.
 ## Gosu::Window
 
 Added #draw_rectangle which draws a simple rectangle specified with a Point
-and Size in one colour.
+and Size in one colour and #draw_simple_line which draws a line in a single
+colour.
+
+### N.B. There are serious warnings against using #draw_line for anything other than debugging purposes
 
 ## Gosu::Font
 
-Added #measure and #centred_in which measure a piece of text and centre it in
-a given Size respectively.
+Added #measure and #centred_in / #centered_in which measure a piece of text
+and centre it in a given Size respectively.
 
 ## Installation
 

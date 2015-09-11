@@ -21,6 +21,12 @@ describe GosuEnhanced::Point do
       expect(point.x).to eq(-10)
       expect(point.y).to eq(-20)
     end
+
+    it "should work with the utility function" do
+      point = GosuEnhanced::Point(10, 20)
+      expect(point.x).to eq 10
+      expect(point.y).to eq 20
+    end
   end
 
   describe '#offset' do

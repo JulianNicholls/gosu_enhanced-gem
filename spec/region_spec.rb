@@ -6,7 +6,25 @@ describe GosuEnhanced::Region do
 
   describe '#initialize' do
     it 'should work with a Point and a Size' do
-      GosuEnhanced::Region.new(point, size)
+      reg = GosuEnhanced::Region.new(point, size)
+
+      expect(reg.position).to eq GosuEnhanced::Point.new(10, 20)
+      expect(reg.size).to eq GosuEnhanced::Size.new(30, 40)
+    end
+
+    it 'should work with 2 Points' do
+      point2 = GosuEnhanced::Point.new(40, 60)
+      reg    = GosuEnhanced::Region.new(point, point2)
+
+      expect(reg.position).to eq GosuEnhanced::Point.new(10, 20)
+      expect(reg.size).to eq GosuEnhanced::Size.new(30, 40)
+    end
+
+    it 'should work with the utility function' do
+      reg = GosuEnhanced.Region(point, size)
+
+      expect(reg.position).to eq GosuEnhanced::Point.new(10, 20)
+      expect(reg.size).to eq GosuEnhanced::Size.new(30, 40)
     end
   end
 
@@ -60,7 +78,7 @@ describe GosuEnhanced::Region do
   # a duplicate correctly.
 
   describe '#dup' do
-    it 'should duplicate a region' do
+    it 'should duplicate a region without affecting the copied region' do
       reg     = GosuEnhanced::Region.new(point, size)
       new_reg = reg.dup
 

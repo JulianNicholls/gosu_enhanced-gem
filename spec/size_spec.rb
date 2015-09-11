@@ -13,6 +13,12 @@ describe GosuEnhanced::Size do
       expect { GosuEnhanced::Size.new(10, -20) }.to raise_error Exception
       expect { GosuEnhanced::Size.new(-10, -20) }.to raise_error Exception
     end
+
+    it 'should work with the utility function' do
+      size = GosuEnhanced.Size(10, 20)
+      expect(size.width).to eq 10
+      expect(size.height).to eq 20
+    end
   end
 
   describe '#inflate' do

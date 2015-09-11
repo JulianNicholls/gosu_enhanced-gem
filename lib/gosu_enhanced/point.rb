@@ -59,5 +59,7 @@ module GosuEnhanced
   def Point(x, y)
     Point.new(x, y)
   end
+
+  module_function :Point
 end
 

@@ -109,4 +109,6 @@ module GosuEnhanced
   def Size(x, y)
     Size.new(x, y)
   end
+
+  module_function :Size
 end

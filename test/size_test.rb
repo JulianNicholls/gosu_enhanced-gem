@@ -44,7 +44,7 @@ describe GosuEnhanced::Size do
     end
 
     it 'should raise an error with out-of-range values' do
-      size  = GosuEnhanced::Size.new(40, 50)
+      size = GosuEnhanced::Size.new(40, 50)
       expect { size.inflate(-50, -20) }.must_raise Exception
       expect { size.inflate(-30, -60) }.must_raise Exception
       expect { size.inflate(-50, -70) }.must_raise Exception
@@ -67,7 +67,7 @@ describe GosuEnhanced::Size do
     end
 
     it 'should raise an error for out-of-range values' do
-      size  = GosuEnhanced::Size.new(70, 60)
+      size = GosuEnhanced::Size.new(70, 60)
       expect { size.deflate(80, 50) }.must_raise Exception
       expect { size.deflate(60, 70) }.must_raise Exception
       expect { size.deflate(80, 70) }.must_raise Exception
@@ -76,28 +76,28 @@ describe GosuEnhanced::Size do
 
   describe '#inflate!' do
     it 'should work with another Size' do
-      size  = GosuEnhanced::Size.new(10, 20)
+      size = GosuEnhanced::Size.new(10, 20)
       size.inflate!(GosuEnhanced::Size.new(30, 40))
       size.width.must_equal 40
       size.height.must_equal 60
     end
 
     it 'should work with two values' do
-      size  = GosuEnhanced::Size.new(10, 20)
+      size = GosuEnhanced::Size.new(10, 20)
       size.inflate!(40, 50)
       size.width.must_equal 50
       size.height.must_equal 70
     end
 
     it 'should work with negative values' do
-      size  = GosuEnhanced::Size.new(40, 50)
+      size = GosuEnhanced::Size.new(40, 50)
       size.inflate!(-30, -20)
       size.width.must_equal 10
       size.height.must_equal 30
     end
 
     it 'should raise an error with out-of-range values' do
-      size  = GosuEnhanced::Size.new(40, 50)
+      size = GosuEnhanced::Size.new(40, 50)
       expect { size.inflate!(-50, -20) }.must_raise Exception
       expect { size.inflate!(-30, -60) }.must_raise Exception
       expect { size.inflate!(-50, -70) }.must_raise Exception
@@ -106,21 +106,21 @@ describe GosuEnhanced::Size do
 
   describe '#deflate!' do
     it 'should work with another Size' do
-      size  = GosuEnhanced::Size.new(60, 80)
+      size = GosuEnhanced::Size.new(60, 80)
       size.deflate!(GosuEnhanced::Size.new(30, 40))
       size.width.must_equal 30
       size.height.must_equal 40
     end
 
     it 'should work with two values' do
-      size  = GosuEnhanced::Size.new(70, 60)
+      size = GosuEnhanced::Size.new(70, 60)
       size.deflate!(40, 50)
       size.width.must_equal 30
       size.height.must_equal 10
     end
 
     it 'should raise an error for out-of-range values' do
-      size  = GosuEnhanced::Size.new(70, 60)
+      size = GosuEnhanced::Size.new(70, 60)
       expect { size.deflate!(80, 50) }.must_raise Exception
       expect { size.deflate!(60, 70) }.must_raise Exception
       expect { size.deflate!(80, 70) }.must_raise Exception
@@ -149,7 +149,7 @@ describe GosuEnhanced::Size do
 
   describe '#to_s' do
     it 'should render usefully' do
-      size  = GosuEnhanced::Size.new(10, 20)
+      size = GosuEnhanced::Size.new(10, 20)
       size.to_s.must_equal '<GosuEnhanced::Size 10x20>'
     end
   end

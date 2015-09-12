@@ -67,10 +67,7 @@ module Gosu
     def centred_in(text, rect)
       size = measure(text)
 
-      Point.new(
-        (rect.width - size.width) / 2,
-        (rect.height - size.height) / 2
-      )
+      Point((rect.width - size.width) / 2, (rect.height - size.height) / 2)
     end
 
     # Synonym for centred_in, allowing for centre to be spelled center.

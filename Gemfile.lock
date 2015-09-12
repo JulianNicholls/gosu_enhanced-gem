@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gosu_enhanced (0.4.1)
+    gosu_enhanced (0.4.2)
       gosu (~> 0.10)
 
 GEM

@@ -62,4 +62,3 @@ module GosuEnhanced
 
   module_function :Point
 end
-

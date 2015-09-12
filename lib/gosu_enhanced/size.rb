@@ -1,3 +1,4 @@
+# Module for the Gosu Enhanced gem.
 module GosuEnhanced
   # Hold a 2-dimensional size and allow for inflation / deflation
   class Size
@@ -14,7 +15,7 @@ module GosuEnhanced
     # * +ht+    Height
 
     def initialize(wid, ht)
-      @width = wid
+      @width  = wid
       @height = ht
       validate(0, 0)
     end
@@ -47,7 +48,7 @@ module GosuEnhanced
 
       validate(by_w, by_h)
 
-      @width += by_w
+      @width  += by_w
       @height += by_h
 
       self

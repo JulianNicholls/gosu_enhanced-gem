@@ -22,7 +22,7 @@ describe GosuEnhanced::Point do
       point.y.must_equal(-20)
     end
 
-    it "should work with the utility function" do
+    it 'should work with the utility function' do
       point = GosuEnhanced::Point(10, 20)
       point.x.must_equal 10
       point.y.must_equal 20
@@ -68,35 +68,35 @@ describe GosuEnhanced::Point do
 
   describe '#move_by!' do
     it 'should work with another Point' do
-      point  = GosuEnhanced::Point.new(10, 20)
+      point = GosuEnhanced::Point.new(10, 20)
       point.move_by!(GosuEnhanced::Point.new(30, 40))
       point.x.must_equal 40
       point.y.must_equal 60
     end
 
     it 'should work with a Size' do
-      point  = GosuEnhanced::Point.new(10, 20)
+      point = GosuEnhanced::Point.new(10, 20)
       point.move_by!(GosuEnhanced::Size.new(40, 50))
       point.x.must_equal 50
       point.y.must_equal 70
     end
 
     it 'should work with two positive values' do
-      point  = GosuEnhanced::Point.new(10, 20)
+      point = GosuEnhanced::Point.new(10, 20)
       point.move_by!(40, 50)
       point.x.must_equal 50
       point.y.must_equal 70
     end
 
     it 'should work with two negative values' do
-      point  = GosuEnhanced::Point.new(60, 80)
+      point = GosuEnhanced::Point.new(60, 80)
       point.move_by!(-40, -50)
       point.x.must_equal 20
       point.y.must_equal 30
     end
 
     it 'should work with values that result in negative co-ordinates' do
-      point  = GosuEnhanced::Point.new(60, 80)
+      point = GosuEnhanced::Point.new(60, 80)
       point.move_by!(-80, -150)
       point.x.must_equal(-20)
       point.y.must_equal(-70)
@@ -105,21 +105,21 @@ describe GosuEnhanced::Point do
 
   describe '#move_to!' do
     it 'should work with another Point' do
-      point  = GosuEnhanced::Point.new(10, 20)
+      point = GosuEnhanced::Point.new(10, 20)
       point.move_to!(GosuEnhanced::Point.new(30, 40))
       point.x.must_equal 30
       point.y.must_equal 40
     end
 
     it 'should work with two positive values' do
-      point  = GosuEnhanced::Point.new(10, 20)
+      point = GosuEnhanced::Point.new(10, 20)
       point.move_to!(40, 50)
       point.x.must_equal 40
       point.y.must_equal 50
     end
 
     it 'should work with two negative values' do
-      point  = GosuEnhanced::Point.new(60, 80)
+      point = GosuEnhanced::Point.new(60, 80)
       point.move_to!(-40, -50)
       point.x.must_equal(-40)
       point.y.must_equal(-50)
@@ -150,7 +150,7 @@ describe GosuEnhanced::Point do
 
   describe '#to_s' do
     it 'should render usefully.' do
-      point  = GosuEnhanced::Point.new(10, 20)
+      point = GosuEnhanced::Point.new(10, 20)
       point.to_s.must_equal '#<struct GosuEnhanced::Point x=10, y=20>'
     end
   end

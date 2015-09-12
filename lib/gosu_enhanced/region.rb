@@ -1,5 +1,6 @@
 require 'forwardable'
 
+# Module for the Gosu Enhanced gem.
 module GosuEnhanced
   # Hold a rectangular region specified by a Point and a Size
   # Most functions are delegated to the constituent Point and Size
@@ -23,7 +24,7 @@ module GosuEnhanced
       size = Size.new(size.x - pos.x, size.y - pos.y) if size.respond_to? :x
 
       @position = pos.dup
-      @size = size.dup
+      @size     = size.dup
     end
 
     # Return whether the region contains the specified +row+ and +col+

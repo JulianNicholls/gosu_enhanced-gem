@@ -1,8 +1,8 @@
 # Gosu is the module that the Gosu library uses. It is re-opened here to allow
 # access to the Window and Font classes.
 module Gosu
-  # Add a draw_rectangle() to Window which simplifies drawing a simple rectangle
-  # in one colour
+  # Add draw_rectangle() and draw_simple_line() to Window which simplifies
+  # drawing simple rectangles and lines in one colour
   class Window
     # Simplify drawing a rectangle in a single colour.
     #
@@ -40,8 +40,8 @@ module Gosu
     end
   end
 
-  # Add a measure to return both width and height for a text and a way
-  # to centre a text in a rectangle.
+  # Add a measure to return both width and height for a text and a way to
+  # centre a piece of text in a rectangle.
   class Font
     include GosuEnhanced
 
@@ -58,11 +58,11 @@ module Gosu
     # Return the co-ordnates needed to place a given string in the centre of an
     # area, both vertically and horizontally.
     #
-    # return::  [Point] The point to write the string, expressed as an offset
-    #           from the top-left corner of the rectangle.
-    #
     # * +text+    [String] String to centre
     # * +rect+    [Size] Rectangular area size
+    #
+    # return::  [Point] The point to write the string, expressed as an offset
+    #           from the top-left corner of the rectangle.
 
     def centred_in(text, rect)
       size = measure(text)

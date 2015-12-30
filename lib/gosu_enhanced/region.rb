@@ -16,7 +16,8 @@ module GosuEnhanced
     attr_reader :size
 
     # Create a new region with specified +pos+ as top left corner and +size+
-    # as width and height.
+    # as width and height. The stored positions are copies of the passed
+    # position and size to avoid aliasing.
     #
     # Alternatively, can be initialized with 2 +Point+s.
 
@@ -46,6 +47,7 @@ module GosuEnhanced
       position.x
     end
 
+    # Duplicate a Region, must be done explicitly to avoid aliasing.
     def dup
       Region.new(position, size)
     end
@@ -63,12 +65,15 @@ module GosuEnhanced
 
     private
 
+    # Return whether the passed Point +pt+ is contained within the current
+    # Region.
     def contains_point?(pt)
       pt.x.between?(left, left + width - 1) &&
         pt.y.between?(top, top + height - 1)
     end
   end
 
+  # Utility function to create a new Region
   def Region(pos, size)
     Region.new(pos, size)
   end

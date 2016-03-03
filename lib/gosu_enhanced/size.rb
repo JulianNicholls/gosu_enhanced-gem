@@ -86,7 +86,7 @@ module GosuEnhanced
     # Size negative.
 
     def validate(by_w, by_h)
-      fail 'Cannot make size negative' if width + by_w < 0 || height + by_h < 0
+      raise 'Cannot make size negative' if width + by_w < 0 || height + by_h < 0
     end
 
     # Change the dimensions using the dimensions of another Size.

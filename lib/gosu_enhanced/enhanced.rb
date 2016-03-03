@@ -75,6 +75,6 @@ module Gosu
     # * +text+    [String] String to centre
     # * +rect+    [Size] Rectangular area size
 
-    alias_method :centered_in, :centred_in
+    alias centered_in centred_in
   end
 end

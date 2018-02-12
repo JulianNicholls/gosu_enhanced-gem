@@ -22,7 +22,7 @@ size.)
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'gosu', '~> 0.10.4'
+  spec.add_runtime_dependency 'gosu', '~> 0.10.8'
 
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'

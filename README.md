@@ -1,4 +1,4 @@
-# gosu_enhanced V0.4.0
+# gosu_enhanced V0.4.5
 
 Some added classes for using Gosu. Updated to use Gosu 0.10.x.
 
@@ -23,7 +23,7 @@ Added #draw_rectangle which draws a simple rectangle specified with a Point
 and Size in one colour and #draw_simple_line which draws a line in a single
 colour.
 
-### N.B. There are serious warnings against using #draw_line for anything other than debugging purposes
+#### N.B. There are serious warnings against using #draw_line for anything other than debugging purposes
 
 ## Gosu::Font
 
@@ -61,5 +61,5 @@ Or install it yourself as:
 I am not affiliated in any way to the authors of the Gosu Gem or
 [libgosu](libgosu.org).
 
-Gosu and all documentation © 2001-2015 Julian Raschke, Jan Lücker, and
+Gosu and all documentation © 2001-2019 Julian Raschke, Jan Lücker, and
 other contributors. Gosu is released under the MIT license.

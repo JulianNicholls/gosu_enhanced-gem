@@ -1,6 +1,6 @@
 # gosu_enhanced V0.4.5
 
-Some added classes for using Gosu. Updated to use Gosu 0.10.x.
+Some added classes for using Gosu. Updated to use Gosu 0.14.x.
 
 ## Point
 

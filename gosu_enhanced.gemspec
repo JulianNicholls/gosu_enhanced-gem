@@ -25,6 +25,6 @@ size.)
   spec.add_runtime_dependency 'gosu', '~> 0.14.5'
 
   spec.add_development_dependency 'bundler', '~> 1.11'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'minitest', '~> 5.8'
 end
